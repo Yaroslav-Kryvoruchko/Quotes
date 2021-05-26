@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181816;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  background: rgba(0, 0, 255, 0.5);
+  position: fixed;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+  max-width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#quote_items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#quote_items h1 {
+  font-family: Montserrat Alternates;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #eaeaea;
+  margin-bottom: 0;
+}
+
+#quote_items h2 {
+  font-family: Montserrat Alternates;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #eaeaea;
+  opacity: 0.3;
+}
+
+#times {
+  font-family: Montserrat Alternates;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #eaeaea;
+  margin-bottom: 0;
+}
