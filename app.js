@@ -3,14 +3,14 @@ const quoteItemTop = document.getElementById("quote_item_top");
 const quoteItemBottom = document.getElementById("quote_item_bottom");
 
 let numberQuotes;
-let userInputTime = 0.1; /* parseInt(prompt("What you want set time on your timer?", "1440")) */ /* 0.1 = 6 seconds, 1 = minute, 1440 = 24 hour */
+let userInputTime = parseInt(prompt("What you want set time on your timer?", "10")); /* 0.1 = 6 seconds, 1 = minute, 1440 = 24 hour */
 let timerTime = userInputTime * 60;
 let numberOfQuotes = 21;
 let checkNumber = [];
 
-// if (isNaN(userInputTime) || userInputTime <= 0) {
-//   timerTime = 1440 * 60;
-// }
+if (isNaN(userInputTime) || userInputTime <= 0) {
+  timerTime = 1440 * 60;
+}
 
 function addAndCheckNumbers() {
   for (let i = 0; i < numberOfQuotes; i++) {
