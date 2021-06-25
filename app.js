@@ -3,7 +3,9 @@ const quoteItemTop = document.getElementById("quote_item_top");
 const quoteItemBottom = document.getElementById("quote_item_bottom");
 
 let numberQuotes;
-let userInputTime = parseInt(prompt("What you want set time on your timer?", "10")); /* 0.1 = 6 seconds, 1 = minute, 1440 = 24 hour */
+let userInputTime = parseInt(
+  prompt("What you want set time on your timer?", "10")
+); /* 1440 = 24 hour  */
 let timerTime = userInputTime * 60;
 let numberOfQuotes = 21;
 let checkNumber = [];
@@ -76,6 +78,20 @@ function timerMain() {
 }
 
 timerMain();
+
+function firstQuotes() {
+  const startQuotes = Math.trunc(Math.random() * numberOfQuotes);
+  changeQuotes(startQuotes);
+
+  if (startQuotes === checkNumber[0]) {
+    checkNumber = [];
+    addAndCheckNumbers();
+  }
+}
+
+setTimeout(() => {
+  firstQuotes();
+}, 10);
 
 function changeQuotes(numberQuote) {
   quoteItemTop.innerHTML = arroyQuotes[numberQuote].mainText;
