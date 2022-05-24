@@ -1,17 +1,20 @@
+import { arroyQuotes } from './arrayQuotes.js';
+
 const times = document.getElementById('times');
 const quoteItemTop = document.getElementById('quote_item_top');
 const quoteItemBottom = document.getElementById('quote_item_bottom');
 
 let numberQuotes;
+let timer;
 let userInputTime = parseInt(
   prompt('What you want set time on your timer?', '10')
-); /* 1440 = 24 hour  */
+);
 let timerTime = userInputTime * 60;
 let numberOfQuotes = 21;
 let checkNumber = [];
 
 if (isNaN(userInputTime) || userInputTime <= 0) {
-  timerTime = 1440 * 60;
+  timerTime = 1 * 60;
 }
 
 function addAndCheckNumbers() {
@@ -50,9 +53,9 @@ function randomNumbers() {
 
 function timerMain() {
   timer = setInterval(() => {
-    seconds = Math.trunc(timerTime % 60);
-    minutes = Math.trunc((timerTime / 60) % 60);
-    hour = Math.trunc((timerTime / 60 / 60) % 60);
+    let seconds = Math.trunc(timerTime % 60);
+    let minutes = Math.trunc((timerTime / 60) % 60);
+    let hour = Math.trunc((timerTime / 60 / 60) % 60);
 
     if (seconds < 10) {
       seconds = '0' + seconds;
@@ -87,14 +90,7 @@ function firstQuotes() {
     addAndCheckNumbers();
   }
 }
-
-new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    resolve(firstQuotes());
-  }, 50);
-}).then(function (result) {
-  return result;
-});
+firstQuotes();
 
 function changeQuotes(numberQuote) {
   quoteItemTop.innerHTML = arroyQuotes[numberQuote].mainText;
