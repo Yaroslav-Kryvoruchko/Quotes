@@ -97,5 +97,3 @@ export const arroyQuotes = [
     secondaryText: 'by. Dr. Seuss',
   },
 ];
-
-const arrayStartQuotes = [];
